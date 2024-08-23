@@ -157,7 +157,7 @@
 
 
 
-@media screen and (max-width:900px) {
+@media screen and (min-width:320px) and (max-width:900px) {
     .play-video {
         flex-basis: 100%;
     }
@@ -172,7 +172,7 @@
     }
 
     .play-video .play-video-info span {
-        margin: 0px 15px 5px 15px;
+        margin: 0px 10px 10px 0px;
     }
 
     .publisher button {
@@ -181,10 +181,27 @@
     }
 
     .publisher {
-        width: 80%;
+        width: 100%;
+        padding: 0px 10px;
     }
 
     .play-video-info {
         width: 100%;
+        padding: 0px 10px;
+    }
+
+    .vid-description h4 {
+        font-size: 14px;
+        padding: 0px 10px;
+    }
+
+    .play-video h3 {
+        font-size: 14px;
+        padding: 0px 10px;
+    }
+
+    .vid-description p {
+        font-size: 13px;
+        padding: 0px 10px;
     }
 }

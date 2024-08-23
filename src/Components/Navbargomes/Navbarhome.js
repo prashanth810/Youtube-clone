@@ -59,8 +59,7 @@ const Navbarhome = ({ setSidebar }) => {
                         icon={theme === 'light-theme' ? faMoon : faSun}
                         size="xl"
                         style={{ color: theme === 'light-theme' ? 'black' : 'white' }}
-                        onClick={themehandler}
-                    />
+                        onClick={themehandler} />
                 </div>
             </nav>
         </div>

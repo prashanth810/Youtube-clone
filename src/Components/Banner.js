@@ -4,14 +4,14 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMoon, faSun } from '@fortawesome/free-solid-svg-icons';
 
 const Banner = () => {
-    const [theme, setTheme] = useState('light-theme');
+    const [theme, setTheme] = useState("light-theme");
 
     const toggleTheme = () => {
         if (theme === "dark-theme") {
-            setTheme("light-theme");
+            setTheme("light-theme")
         }
         else {
-            setTheme("dark-theme");
+            setTheme('dark-theme');
         }
     }
 

@@ -1,0 +1,16 @@
+.light-theme {
+    --primary-bg-color: white;
+    --secondary-color: black;
+    --third-color: red;
+}
+
+.dark-theme {
+    --primary-bg-color: black;
+    --secondary-color: white;
+}
+
+.card {
+    background-color: var(--primary-bg-color);
+    color: var(--secondary-color);
+
+}

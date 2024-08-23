@@ -135,6 +135,10 @@ input,
         width: 83%;
     }
 
+    .recomended .side-video-list .vid-info h4 {
+        padding: 22px 8px 5px 8px;
+    }
+
 
 }
 

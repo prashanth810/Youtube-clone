@@ -4,24 +4,23 @@ import like from '../../images/like.png';
 import dislike from '../../images/dislike.png';
 import share from '../../images/share.png';
 import save from '../../images/save.png';
-import jack from '../../images/jack.png';
-import user_prfile from '../../images/user_profile.jpg';
 import { API_KEY, value_converter } from '../../Data';
 import moment from 'moment';
 import { useParams } from 'react-router-dom';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faAngleDown, faAngleLeft, faAngleUp } from '@fortawesome/free-solid-svg-icons';
 
 const Playvideo = () => {
+    const [expand, setExpand] = useState(false); // State to track comment expansion
     const [subscribe, setSubscribe] = useState(() => {
         return localStorage.getItem("subscribe") || "Subscribe";
     });
 
-    // Function to handle subscribe/unsubscribe action
     const handlesubscribe = () => {
         const newSubscribeState = subscribe === "Subscribe" ? "Unsubscribe" : "Subscribe";
         setSubscribe(newSubscribeState);
-        localStorage.setItem("subscribe", newSubscribeState); // Save to localStorage
+        localStorage.setItem("subscribe", newSubscribeState);
     };
-
 
     const [apidata, setApiData] = useState(null);
     const [channeldata, setChanneldata] = useState(null);
@@ -68,6 +67,9 @@ const Playvideo = () => {
         return <div>Loading...</div>;
     };
 
+    const toggleExpand = () => {
+        setExpand(!expand);
+    };
 
     return (
         <div className='play-video'>
@@ -107,9 +109,12 @@ const Playvideo = () => {
             <div className='vid-description'>
                 <p>{apidata ? apidata.snippet.description.slice(0, 400) : "No Data Available"}</p>
                 <hr />
-                <h4>{apidata ? value_converter(apidata.statistics.commentCount) : "No comments"} Comment's</h4>
+                <h4 className='my-4' onClick={toggleExpand} style={{ cursor: 'pointer' }}>
+                    {apidata ? value_converter(apidata.statistics.commentCount) : "No comments"} Comments click to open
+                    <FontAwesomeIcon icon={expand ? faAngleUp : faAngleDown} className={`mx-3 ${expand ? 'rotate-icon' : ''}`} />
+                </h4>
 
-                {commentdata && commentdata.map((val, i) => {
+                {expand && commentdata && commentdata.map((val, i) => {
                     return (
                         <div className='comment' key={i}>
                             <img src={val.snippet.topLevelComment.snippet.authorProfileImageUrl} alt='user' />
