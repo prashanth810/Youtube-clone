@@ -1,0 +1,54 @@
+.dark-theme {
+    --primary-bg-color: black;
+    --secondary-color: white;
+}
+
+.light-theme {
+    --primary-bg-color: white;
+    --secondary-color: black;
+}
+
+
+.recomended {
+    flex-basis: 30%;
+}
+
+.side-video-list {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 8px;
+    color: var(--secondary-color);
+    border-radius: 10px;
+    padding: 2px;
+    margin: 10px 0px;
+}
+
+.side-video-list:hover {
+    color: var(--secondary-color);
+}
+
+.side-video-list img {
+    flex-basis: 49%;
+    width: 50%;
+}
+
+.side-video-list:hover {
+    box-shadow: 0px 0px 7px 0px lightgreen;
+}
+
+.vid-info {
+    flex-basis: 49%;
+}
+
+.vid-info h4 {
+    font-size: 13px;
+    margin-bottom: 5px;
+}
+
+@media screen and (max-width:900px) {
+    .recomended {
+        flex-basis: 100%;
+    }
+
+
+}

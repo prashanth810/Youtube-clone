@@ -1,0 +1,33 @@
+.dark-theme {
+    --primary-bg-color: black;
+    --secondary-color: #f9f9f9;
+}
+
+.light-theme {
+    --primary-bg-color: #f9f9f9;
+    --secondary-color: black;
+}
+
+body {
+    background-color: var(--primary-bg-color);
+}
+
+.container {
+    background-color: var(--primary-bg-color);
+    padding: 20px 0% 20px 4%;
+}
+
+.large-container {
+    padding-left: 7%;
+}
+
+.play-containe {}
+
+@media screen and(max-width:900px) {
+
+    .large-container,
+    .container {
+        padding: 10px 5% 10px 5%;
+    }
+
+}
