@@ -188,7 +188,8 @@ input,
         display: none;
     }
 
-    .sortcut-links img {
+    .sortcut-links img,
+    .subscribe-list img {
         margin-top: 20px;
     }
 }

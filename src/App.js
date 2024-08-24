@@ -6,6 +6,7 @@ import Navbarhome from './Components/Navbargomes/Navbarhome';
 import { Route, Routes } from 'react-router-dom';
 import Videohome from './youtubeclone/Videohome';
 import { useState } from 'react';
+import FooterMobile from './Components/Footer/FooterMobile';
 
 function App() {
   const [sidebar, setSidebar] = useState(true);
@@ -19,6 +20,7 @@ function App() {
         <Route path='/' element={<Youtubehome sidebar={sidebar} />} />
         <Route path='/video/:categoryId/:videoId' element={<Videohome />} />
       </Routes>
+      {/* <FooterMobile /> */}
     </>
   );
 }
